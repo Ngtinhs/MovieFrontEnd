@@ -1,21 +1,45 @@
-import { AcUnit } from "@material-ui/icons"
-import "./home.scss"
-import React from 'react'
-import Navbar from "../../components/navbar/Navbar"
-import Featured from "../../components/featured/Featured"
-import List from "../../components/list/List"
+import Navbar from "../../components/navbar/Navbar";
+import Featured from "../../components/featured/Featured";
+import "./home.scss";
+import List from "../../components/list/List";
+import { useEffect, useState } from "react";
+import axios from "axios";
 
-const Home = ({type}) => {
+const Home = ({ type }) => {
+  const [lists, setLists] = useState([]);
+  const [genre, setGenre] = useState(null);
+
+  useEffect(() => {
+    const getRandomLists = async () => {
+      try {
+        const res = await axios.get(
+          `lists${type ? "?type=" + type : ""}${
+            genre ? "&genre=" + genre : ""
+          }`,
+          {
+            headers: {
+              token:
+              "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzNGMyMGM3OWUwNjM2M2Q4NDM2NWUyOSIsImlzQWRtaW4iOnRydWUsImlhdCI6MTY2NTk4MDc0NCwiZXhwIjoxNjY2NDEyNzQ0fQ.lLnNDI9YAQG6PLHEJbQPOR_wu4lVwRGZDLoJvhJ9MXo"
+            },
+          }
+        );
+        setLists(res.data);
+      } catch (err) {
+        console.log(err);
+      }
+    };
+    getRandomLists();
+  }, [type, genre]);
+
   return (
-    <div className='home'>
-        <Navbar />
-        <Featured type={type}/>
-        <List/>
-        <List/>
-        <List/>
-
+    <div className="home">
+      <Navbar />
+      <Featured type={type} setGenre={setGenre} />
+      {lists.map((list) => (
+        <List list={list} />
+      ))}
     </div>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;

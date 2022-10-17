@@ -14,7 +14,7 @@ const App = () => {
   const user = true;
   return (
     <Router>
-      <switch>
+      <Switch>
         <Route exact path="/">
          { user ? <Home /> : <Redirect to="register" />}
         </Route>
@@ -37,7 +37,7 @@ const App = () => {
             </Route>
           </>
         )}
-      </switch>
+      </Switch>
     </Router>
   );
 };
