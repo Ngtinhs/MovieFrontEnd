@@ -19,7 +19,7 @@ export default function ListItem({ index }) {
       onMouseLeave={() => setIsHovered(false)}
     >
       <img
-        src="https://scontent.fsgn5-5.fna.fbcdn.net/v/t39.30808-6/278843837_1440477413076591_2712276955363853423_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=8bfeb9&_nc_ohc=asY9aAyebksAX-UdbS4&_nc_ht=scontent.fsgn5-5.fna&oh=00_AT-1lZBDkGFnO_NNuWTS0hKL5_-nP8Asa4kos8japGVRfQ&oe=634964C8"
+        src="https://phongkhammayo.vn/hinh-anh-dep-nhat-hien-nay/imager_32414.jpg"
         alt=""
       />
       {isHovered && (
