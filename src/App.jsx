@@ -9,9 +9,10 @@ import {
   Route,
   Redirect,
 } from "react-router-dom";
-import Register from "./Pages/dangky/Dangky";
+import { useContext } from "react";
+import { AuthContext } from "./authContext/AuthContext";
 const App = () => {
-  const user = true;
+  const { user } = useContext(AuthContext);
   return (
     <Router>
       <Switch>

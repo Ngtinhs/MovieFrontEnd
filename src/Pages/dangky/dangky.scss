@@ -31,7 +31,29 @@
           font-weight: 500;
           cursor: pointer;
         }
+  
+        
       }
+    }
+  
+    .loginButton {
+      background-color: rgb(255, 0, 0, 0.6);
+      border: none;
+      color: white;
+      border-radius: 5px;
+      padding: 5px 15px;
+      font-size: 16px;
+      font-weight: 500;
+      cursor: pointer;
+      text-align: center;
+      
+    }
+
+    .loginButton:hover{
+      background-color: rgb(255, 0, 0, 0.8);
+    }
+    .abc{
+      text-decoration: none;
     }
   
     .container {

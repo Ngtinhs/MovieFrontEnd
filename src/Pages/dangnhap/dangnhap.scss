@@ -22,7 +22,28 @@
         }
       }
     }
-  
+    
+    .loginButton {
+      background-color: rgb(255, 0, 0, 0.5);
+      border: none;
+      color: white;
+      border-radius: 5px;
+      padding: 5px 15px;
+      font-size: 16px;
+      cursor: pointer;
+      text-align: center;
+      
+    }
+    span {
+      text-align: center;
+    }
+    .loginButton:hover{
+      background-color: rgb(255, 0, 0, 0.8);
+    }
+    .abc{
+      text-decoration: none;
+    }
+
     .container {
       width: 100%;
       height: 100%;
@@ -34,6 +55,7 @@
       align-items: center;
       justify-content: center;
       color: white;
+      text-align: center;
   
       form {
         width: 300px;
